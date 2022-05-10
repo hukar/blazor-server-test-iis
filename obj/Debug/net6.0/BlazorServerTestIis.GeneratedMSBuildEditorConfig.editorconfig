@@ -19,6 +19,10 @@ build_property._RazorSourceGeneratorDebug =
 build_metadata.AdditionalFiles.TargetPath = QXBwLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
+[/Users/hukar/Documents/programmation/blazor/BlazorServerTestIis/Components/RobotForm.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9Sb2JvdEZvcm0ucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
 [/Users/hukar/Documents/programmation/blazor/BlazorServerTestIis/Pages/Counter.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvQ291bnRlci5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
@@ -29,6 +33,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [/Users/hukar/Documents/programmation/blazor/BlazorServerTestIis/Pages/Index.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvSW5kZXgucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/hukar/Documents/programmation/blazor/BlazorServerTestIis/Pages/Robot.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvUm9ib3QucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
 [/Users/hukar/Documents/programmation/blazor/BlazorServerTestIis/Shared/MainLayout.razor]

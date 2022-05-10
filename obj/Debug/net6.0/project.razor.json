@@ -12,39 +12,6 @@
   "ProjectWorkspaceState": {
     "TagHelpers": [
       {
-        "HashCode": 151916921,
-        "Kind": "Components.Component",
-        "Name": "BlazorServerTestIis.Pages.Counter",
-        "AssemblyName": "BlazorServerTestIis",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "Counter"
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "BlazorServerTestIis.Pages.Counter"
-        }
-      },
-      {
-        "HashCode": 2029185699,
-        "Kind": "Components.Component",
-        "Name": "BlazorServerTestIis.Pages.Counter",
-        "AssemblyName": "BlazorServerTestIis",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "BlazorServerTestIis.Pages.Counter"
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "BlazorServerTestIis.Pages.Counter",
-          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
-        }
-      },
-      {
         "HashCode": -99757207,
         "Kind": "Components.Component",
         "Name": "BlazorServerTestIis.Pages.FetchData",
@@ -111,35 +78,68 @@
         }
       },
       {
-        "HashCode": -1791701108,
+        "HashCode": 151916921,
         "Kind": "Components.Component",
-        "Name": "BlazorServerTestIis.App",
+        "Name": "BlazorServerTestIis.Pages.Counter",
         "AssemblyName": "BlazorServerTestIis",
         "CaseSensitive": true,
         "TagMatchingRules": [
           {
-            "TagName": "App"
+            "TagName": "Counter"
           }
         ],
         "Metadata": {
           "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "BlazorServerTestIis.App"
+          "Common.TypeName": "BlazorServerTestIis.Pages.Counter"
         }
       },
       {
-        "HashCode": -1159260090,
+        "HashCode": 2029185699,
         "Kind": "Components.Component",
-        "Name": "BlazorServerTestIis.App",
+        "Name": "BlazorServerTestIis.Pages.Counter",
         "AssemblyName": "BlazorServerTestIis",
         "CaseSensitive": true,
         "TagMatchingRules": [
           {
-            "TagName": "BlazorServerTestIis.App"
+            "TagName": "BlazorServerTestIis.Pages.Counter"
           }
         ],
         "Metadata": {
           "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "BlazorServerTestIis.App",
+          "Common.TypeName": "BlazorServerTestIis.Pages.Counter",
+          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
+        }
+      },
+      {
+        "HashCode": 1096120978,
+        "Kind": "Components.Component",
+        "Name": "BlazorServerTestIis.Pages.Robot",
+        "AssemblyName": "BlazorServerTestIis",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "Robot"
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "BlazorServerTestIis.Pages.Robot"
+        }
+      },
+      {
+        "HashCode": 2035655639,
+        "Kind": "Components.Component",
+        "Name": "BlazorServerTestIis.Pages.Robot",
+        "AssemblyName": "BlazorServerTestIis",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "BlazorServerTestIis.Pages.Robot"
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "BlazorServerTestIis.Pages.Robot",
           "Components.NameMatch": "Components.FullyQualifiedNameMatch"
         }
       },
@@ -269,6 +269,72 @@
         "Metadata": {
           "Runtime.Name": "Components.IComponent",
           "Common.TypeName": "BlazorServerTestIis.Shared.NavMenu",
+          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
+        }
+      },
+      {
+        "HashCode": -1791701108,
+        "Kind": "Components.Component",
+        "Name": "BlazorServerTestIis.App",
+        "AssemblyName": "BlazorServerTestIis",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "App"
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "BlazorServerTestIis.App"
+        }
+      },
+      {
+        "HashCode": -1159260090,
+        "Kind": "Components.Component",
+        "Name": "BlazorServerTestIis.App",
+        "AssemblyName": "BlazorServerTestIis",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "BlazorServerTestIis.App"
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "BlazorServerTestIis.App",
+          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
+        }
+      },
+      {
+        "HashCode": -2112679779,
+        "Kind": "Components.Component",
+        "Name": "BlazorServerTestIis.Components.RobotForm",
+        "AssemblyName": "BlazorServerTestIis",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "RobotForm"
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "BlazorServerTestIis.Components.RobotForm"
+        }
+      },
+      {
+        "HashCode": 1170694404,
+        "Kind": "Components.Component",
+        "Name": "BlazorServerTestIis.Components.RobotForm",
+        "AssemblyName": "BlazorServerTestIis",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "BlazorServerTestIis.Components.RobotForm"
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "BlazorServerTestIis.Components.RobotForm",
           "Components.NameMatch": "Components.FullyQualifiedNameMatch"
         }
       },
@@ -87997,6 +88063,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "/Users/hukar/Documents/programmation/blazor/BlazorServerTestIis/Pages/Robot.razor",
+      "TargetPath": "Pages\\Robot.razor",
+      "FileKind": "component"
+    },
+    {
       "FilePath": "/Users/hukar/Documents/programmation/blazor/BlazorServerTestIis/Pages/Counter.razor",
       "TargetPath": "Pages\\Counter.razor",
       "FileKind": "component"
@@ -88015,6 +88086,11 @@
       "FilePath": "/Users/hukar/Documents/programmation/blazor/BlazorServerTestIis/_Imports.razor",
       "TargetPath": "_Imports.razor",
       "FileKind": "componentImport"
+    },
+    {
+      "FilePath": "/Users/hukar/Documents/programmation/blazor/BlazorServerTestIis/Components/RobotForm.razor",
+      "TargetPath": "Components\\RobotForm.razor",
+      "FileKind": "component"
     },
     {
       "FilePath": "/Users/hukar/Documents/programmation/blazor/BlazorServerTestIis/App.razor",

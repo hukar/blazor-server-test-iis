@@ -11,6 +11,15 @@ builder.Services.AddServerSideBlazor();
 builder.Services.AddSingleton<WeatherForecastService>();
 builder.Services.AddMudServices();
 
+// Connect to the DB with EF Core
+var connectionString = builder.Configuration.GetConnectionString("HukarConnection");
+builder.Services.AddDbContext<RobotContext>(
+    options => options.UseSqlServer(connectionString)
+);
+
+// Add MediatR
+builder.Services.AddMediatR(typeof(Program));
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

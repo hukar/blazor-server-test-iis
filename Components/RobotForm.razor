@@ -1,0 +1,19 @@
+@using Application.Commands
+@inject IMediator mediator
+
+<MudText Typo="Typo.h3" GutterBottom="true">Robot Form</MudText>
+
+<MudButton Variant="Variant.Filled" Color="Color.Secondary" Class="ml-auto" OnClick="AddRobot">Add Robot</MudButton>
+<p> robot id : @robotId</p>
+
+@code {
+    private int robotId;
+    async Task<int> AddRobot()
+    {
+        var response = await mediator.Send(new AddRobot.Command("BO-789", 345, new CyberBrain { Label = "CC-Hyper", Cost = 567, cyberQi = 99}));
+
+        robotId = response.id;
+
+        return response.id;
+    }
+}
