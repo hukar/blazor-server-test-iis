@@ -1,19 +1,38 @@
 @using Application.Commands
+@using FluentValidation
+
 @inject IMediator mediator
+@inject ISnackbar snackbar
 
 <MudText Typo="Typo.h3" GutterBottom="true">Robot Form</MudText>
 
-<MudButton Variant="Variant.Filled" Color="Color.Secondary" Class="ml-auto" OnClick="AddRobot">Add Robot</MudButton>
-<p> robot id : @robotId</p>
+<MudPaper Class="pa-4">
+    <MudForm @ref="form" Model="robotModel" Validation="robotValidator.ValidateValue">
+        <MudTextField @bind-Value="robotModel.Code" For="() => robotModel.Code" Immediate="true" Label="Code" />
+        <MudTextField @bind-Value="robotModel.Power" For="() => robotModel.Power" Immediate="true" Label="Power" />
+    </MudForm>
+    <MudCardActions>
+        <MudButton Variant="Variant.Filled" Color="Color.Primary" Class="ml-auto" OnClick="async () => await Submit()">
+            Order</MudButton>
+    </MudCardActions>
+</MudPaper>
+
+
 
 @code {
-    private int robotId;
-    async Task<int> AddRobot()
+
+    Robot robotModel = new();
+    MudForm form;
+    RobotValidator robotValidator = new RobotValidator();
+
+    private async Task Submit()
     {
-        var response = await mediator.Send(new AddRobot.Command("BO-789", 345, new CyberBrain { Label = "CC-Hyper", Cost = 567, cyberQi = 99}));
+        await form.Validate();
 
-        robotId = response.id;
-
-        return response.id;
+        if (form.IsValid)
+        {
+            await mediator.Send(new AddRobot.Command(robotModel.Code, robotModel.Power, new CyberBrain { }));
+            snackbar.Add("Submited!");
+        }
     }
 }
