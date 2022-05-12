@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Web;
 using BlazorServerTestIis.Data;
 using MudBlazor.Services;
+using BlazorServerTestIis.Application.Queries;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -48,8 +49,11 @@ app.UseStaticFiles();
 
 app.UseRouting();
 
+
 app.MapBlazorHub();
 app.MapFallbackToPage("/_Host");
+
+app.MapGet("/api/robot", async (IMediator mediator) => await mediator.Send(new GetAllRobots.Query()));
 
 app.Run();
 
