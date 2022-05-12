@@ -1,0 +1,51 @@
+
+@if(Robots is not null && Robots.Count() != 0)
+{
+    <MudText class="mt-8" Typo="Typo.h3" GutterBottom="true">Robots List</MudText>
+
+    <MudSimpleTable Hover Striped Style="overflow-x: auto;">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Code</th>
+                <th>Power</th>
+                <th>Cyber Brain</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var robot in Robots)
+            {
+                <tr>
+                    <td>@robot.Id</td>
+                    <td>@robot.Code</td>
+                    <td>@robot.Power</td>
+                    <td>@robot.CyberBrain?.Label</td>
+                    <td>
+                        
+                        <MudFab 
+                            Color="Color.Error" 
+                            StartIcon="@Icons.Material.Filled.Delete"
+                            OnClick="() => LocalDeleteRobot(robot.Id)" />
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </MudSimpleTable>
+}
+
+@code {
+    [Parameter]
+    public List<Robot>? Robots { get; set; }
+
+    [Parameter]
+    public Action<int>? DeleteRobot { get; set; }
+
+    void LocalDeleteRobot(int robotId)
+    {
+        if(DeleteRobot is not null)
+        {
+            DeleteRobot(robotId);
+        }
+    }
+}

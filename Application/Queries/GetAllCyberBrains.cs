@@ -17,9 +17,7 @@ public static class GetAllCyberBrains
         {
             _db = db;  
         }
-        public async Task<List<CyberBrain>> Handle(Query request, CancellationToken cancellationToken)
-        {
-            return await _db.CyberBrains.ToListAsync();
-        }
+        public async Task<List<CyberBrain>> Handle(Query request, CancellationToken cancellationToken) => await _db.CyberBrains.ToListAsync();
+        
     }
 }
