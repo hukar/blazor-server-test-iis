@@ -20,6 +20,8 @@ public static class AddRobot
 
         public async Task<Response> Handle(Command request, CancellationToken cancellationToken)
         {
+            var cyberBrain = await _db.CyberBrains.FindAsync(request.cyberBrain.Id);
+            
             var robot = new Robot { Code = request.code, Power = request.power, CyberBrain = request.cyberBrain};
 
             _db.Add(robot);

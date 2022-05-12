@@ -17,10 +17,22 @@ builder.Services.AddDbContext<RobotContext>(
     options => options.UseSqlServer(connectionString)
 );
 
+
 // Add MediatR
 builder.Services.AddMediatR(typeof(Program));
 
 var app = builder.Build();
+
+// Reset database for testing
+using var serviceScope = app.Services.CreateScope();
+var robotContext = serviceScope.ServiceProvider.GetService<RobotContext>();
+if(robotContext is not null)
+{
+    Console.WriteLine("database reinitialized");
+    await robotContext.Database.EnsureDeletedAsync();
+    await robotContext.Database.EnsureCreatedAsync();
+}
+
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
@@ -40,3 +52,4 @@ app.MapBlazorHub();
 app.MapFallbackToPage("/_Host");
 
 app.Run();
+

@@ -1,4 +1,6 @@
 @using Application.Commands
+@using Application.Queries
+
 @using FluentValidation
 
 @inject IMediator mediator
@@ -8,8 +10,28 @@
 
 <MudPaper Class="pa-4">
     <MudForm @ref="form" Model="robotModel" Validation="robotValidator.ValidateValue">
+
         <MudTextField @bind-Value="robotModel.Code" For="() => robotModel.Code" Immediate="true" Label="Code" />
+
         <MudTextField @bind-Value="robotModel.Power" For="() => robotModel.Power" Immediate="true" Label="Power" />
+
+        @if(cyberBrains is not null)
+        {
+            <MudSelect 
+            @bind-Value="robotModel.CyberBrain"
+            T="CyberBrain"
+            For="() => robotModel.CyberBrain" 
+            Label="Select fast-food" 
+            HelperText="Cyber Brain" 
+            Placeholder="Please Select" 
+            AdornmentIcon="@Icons.Filled.Memory" 
+            AdornmentColor="Color.Primary">
+            @foreach (var cyberBrain in cyberBrains)
+            {
+                <MudSelectItem Value="cyberBrain" />
+            }
+        </MudSelect>
+        }
     </MudForm>
     <MudCardActions>
         <MudButton Variant="Variant.Filled" Color="Color.Primary" Class="ml-auto" OnClick="async () => await Submit()">
@@ -22,16 +44,27 @@
 @code {
 
     Robot robotModel = new();
-    MudForm form;
+    MudForm? form;
     RobotValidator robotValidator = new RobotValidator();
+
+    List<CyberBrain>? cyberBrains;
+
+    List<Robot>? robots;
+
+    protected override async Task OnInitializedAsync()
+    {
+        cyberBrains = await mediator.Send(new GetAllCyberBrains.Query()); 
+    }
+
+    
 
     private async Task Submit()
     {
-        await form.Validate();
+        await form!.Validate();
 
         if (form.IsValid)
         {
-            await mediator.Send(new AddRobot.Command(robotModel.Code, robotModel.Power, new CyberBrain { }));
+            await mediator.Send(new AddRobot.Command(robotModel.Code, robotModel.Power, robotModel.CyberBrain!));
             snackbar.Add("Submited!");
         }
     }
