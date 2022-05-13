@@ -15,27 +15,30 @@
 
         <MudTextField @bind-Value="robotModel.Power" For="() => robotModel.Power" Immediate="true" Label="Power" />
 
-        @if(cyberBrains is not null)
+        @if (cyberBrains is not null)
         {
-            <MudSelect 
-            @bind-Value="robotModel.CyberBrain"
-            T="CyberBrain"
-            For="() => robotModel.CyberBrain" 
-            Label="Select fast-food" 
-            HelperText="Cyber Brain" 
-            Placeholder="Please Select" 
-            AdornmentIcon="@Icons.Filled.Memory" 
-            AdornmentColor="Color.Primary">
-            @foreach (var cyberBrain in cyberBrains)
-            {
-                <MudSelectItem Value="cyberBrain" />
-            }
-        </MudSelect>
+            <MudSelect
+                @bind-Value="robotModel.CyberBrain" 
+                For="() => robotModel.CyberBrain"
+                Label="Cyber Brain" 
+                AnchorOrigin="Origin.BottomCenter">
+
+                @foreach (var cyberBrain in cyberBrains)
+                {
+                    <MudSelectItem Value="cyberBrain" />
+                }
+
+            </MudSelect>
         }
     </MudForm>
     <MudCardActions>
-        <MudButton Variant="Variant.Filled" Color="Color.Primary" Class="ml-auto" OnClick="async () => await Submit()">
-            Order</MudButton>
+        <MudButton 
+            Variant="Variant.Filled" 
+            Color="Color.Primary" 
+            Class="ml-auto" 
+            OnClick="async () => await Submit()">
+            Add Robot 🤖
+        </MudButton>
     </MudCardActions>
 </MudPaper>
 
@@ -73,6 +76,7 @@
             await mediator.Send(new AddRobot.Command(robotModel.Code, robotModel.Power, robotModel.CyberBrain!));
             snackbar.Add("Submited!");
             robots = await mediator.Send(new GetAllRobots.Query());
+            robotModel = new();
         }
     }
 }

@@ -14,7 +14,7 @@ builder.Services.AddMudServices();
 
 // Connect to the DB with EF Core
 var connectionString = builder.Configuration.GetConnectionString("HukarConnection");
-builder.Services.AddDbContext<RobotContext>(
+builder.Services.AddDbContextFactory<RobotContext>(
     options => options.UseSqlServer(connectionString)
 );
 
@@ -53,7 +53,7 @@ app.UseRouting();
 app.MapBlazorHub();
 app.MapFallbackToPage("/_Host");
 
-app.MapGet("/api/robot", async (IMediator mediator) => await mediator.Send(new GetAllRobots.Query()));
+app.MapRobot();
 
 app.Run();
 

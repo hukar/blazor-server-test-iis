@@ -6,4 +6,5 @@ public class Robot
     public string Code { get; set; } = string.Empty;
     public int Power { get; set; }
     public CyberBrain? CyberBrain { get; set; }
+    public int CyberBrainId { get; set; }
 }

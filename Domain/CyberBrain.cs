@@ -1,4 +1,5 @@
 namespace BlazorServerTestIis.Domain;
+
 public class CyberBrain
 {
     public int Id { get; set; }
@@ -9,7 +10,7 @@ public class CyberBrain
     // Note: this is important so the MudSelect can compare pizzas
     public override bool Equals(object? o) {
         var other = o as CyberBrain ;
-        return other is null ? false : other.Label==Label;
+        return other?.Label==Label;
     }
 
     // Note: this is important too!
