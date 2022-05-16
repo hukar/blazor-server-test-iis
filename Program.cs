@@ -43,6 +43,8 @@ if (!app.Environment.IsDevelopment())
     app.UseHsts();
 }
 
+app.UseCountMiddleware();
+
 app.UseHttpsRedirection();
 
 app.UseStaticFiles();
